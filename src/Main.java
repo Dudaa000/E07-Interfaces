@@ -11,9 +11,9 @@ public class Main{
                 new Date(), "000.00000.0000/0001", 25, "Comércio");
 
 
-        ContaCorrente conta1 = new ContaCorrente(1111, joao, 2000, 100);
-        ContaUniversitaria conta2 = new ContaUniversitaria(222, maria, 50000, 500);
-        ContaCorrente conta3 = new ContaCorrente(333, lojinha, 6000, 50);
+        Conta conta1 = new ContaCorrente(1111, joao, 2000, 20000);
+        Conta conta2 = new ContaUniversitaria(222, maria, 50000, 5000);
+        Conta conta3 = new ContaCorrente(333, lojinha, 6000, 6000);
 
         System.out.println(conta1.toString());
         System.out.println(conta2.toString());
@@ -25,7 +25,7 @@ public class Main{
         conta3.depositar(10000);
 
         conta1.sacar(200);
-        conta2.sacar(1500);
+        conta2.sacar(500);
         conta3.sacar(1640);
 
 
@@ -41,5 +41,7 @@ public class Main{
         System.out.println("Verificação se existem contas IGUAIS");
         System.out.println("Verificação entre a conta de: " + joao.getNome() + " e da conta de: " + maria.getNome());
         System.out.println(joao.autenticar(maria.getCpf()));
+
+        conta1.imprimirExtratoTaxas();
     }
 }

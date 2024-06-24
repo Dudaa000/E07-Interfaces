@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class PessoaFisica extends Cliente {
+public class PessoaFisica extends Cliente implements ITaxas{
 
     private String cpf;
 
@@ -46,6 +46,11 @@ public class PessoaFisica extends Cliente {
         return this.cpf.equals(chave);
 
     }
+
+    public double calculaTaxas(){
+        return 10;
+    }
+
     public String getCpf() {
         return cpf;
     }

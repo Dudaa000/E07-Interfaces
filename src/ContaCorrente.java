@@ -15,10 +15,6 @@ public class ContaCorrente extends Conta{
         }
     }
     public double calculaTaxas() {
-        if(getDono() instanceof PessoaFisica){
-            return 10;
-        }else{
-            return 20;
-        }
+        return getDono().calculaTaxas();
     }
 }

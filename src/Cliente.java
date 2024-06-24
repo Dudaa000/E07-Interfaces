@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public abstract class Cliente {
+public abstract class Cliente implements ITaxas{
 
     private String nome;
 
@@ -12,6 +12,10 @@ public abstract class Cliente {
         this.nome = nome;
         this.endereco = endereco;
         this.data = data;
+    }
+
+    public Cliente(){
+
     }
 
     public abstract boolean autenticar (String chave);

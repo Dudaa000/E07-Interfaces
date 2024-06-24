@@ -92,15 +92,14 @@ public abstract class Conta implements ITaxas{
     public void imprimirExtratoTaxas() {
         double total = 0;
 
-        System.out.printf("====== Extrato de Taxas Conta " + this.numero + " ======\n" +
-                "Manutenção da conta: \n" + "%.2f" + calculaTaxas());
+        System.out.printf("====== Extrato de Taxas Conta " + this.numero + " ======\n" ,
+                "Manutenção da conta: %.2f\n" , calculaTaxas());
         total += calculaTaxas();
-        for(Operacao atual : this.operacoes) {
-            if (atual != null) {
-                if(atual instanceof OperacaoSaque) {
-                    System.out.printf("Saque: %.2f\n", atual.calculaTaxas());
-                    total += atual.calculaTaxas();
-                }
+        for(int i=0; i<operacoes.length; i++) {
+            if (operacoes[i] != null && operacoes[i].getTipo() == 's') {
+
+                    System.out.printf("Saque: %.2f\n", operacoes[i].calculaTaxas());
+                    total += operacoes[i].calculaTaxas();
             }
         }
         System.out.printf("\nTotal: %.2f \n==========================================\n", total);

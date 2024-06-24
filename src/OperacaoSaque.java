@@ -1,4 +1,4 @@
-public class OperacaoSaque extends Operacao {
+public class OperacaoSaque extends Operacao implements ITaxas{
 
     public OperacaoSaque(double valor) {
         super('s', valor);

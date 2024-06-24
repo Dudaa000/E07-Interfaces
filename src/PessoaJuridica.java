@@ -1,7 +1,7 @@
 
 import java.util.Date;
 
-public class PessoaJuridica extends Cliente {
+public class PessoaJuridica extends Cliente implements  ITaxas{
 
     private String cnpj;
 
@@ -49,6 +49,9 @@ public class PessoaJuridica extends Cliente {
 
         return this.cnpj.equals(chave);
 
+    }
+    public double calculaTaxas(){
+        return 20;
     }
 
 
